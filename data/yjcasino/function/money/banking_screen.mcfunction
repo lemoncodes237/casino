@@ -1,0 +1,1 @@
+$dialog show @s {type:"minecraft:multi_action",title:"Banking Menu",body:{type:"minecraft:plain_message",contents:"Your Balance: $$(var)"},inputs:[],actions:[{label:"Deposit",action:{type:"minecraft:run_command",command:"trigger deposit-money"}},{label:"Withdraw",action:{type:"minecraft:run_command",command:"trigger withdraw-money"}},{label:"Close"}]}

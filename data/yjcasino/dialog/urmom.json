@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:confirmation",
+  "title": "Hi there noob",
+  "external_title": "Lmao",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Your mom"
+  },
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "mom_fatness",
+      "label": "Mom fatness",
+      "start": 0,
+      "end": 100,
+      "step": 1,
+      "initial": 0
+    }
+  ],
+  "yes": {
+    "label": "I agree",
+    "action": {
+      "type": "minecraft:dynamic/run_command",
+      "template": "give @s potato $(mom_fatness)"
+    }
+  },
+  "no": {
+    "label": "Your mom",
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "kill @s"
+    }
+  }
+}

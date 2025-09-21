@@ -1,0 +1,40 @@
+{
+    "type": "minecraft:multi_action",
+    "title": {
+        "translate": "dialogs.dialog_teleport.title",
+        "fallback": "Dialog Teleport"
+    },
+    "external_title": {
+        "translate": "dialogs.dialog_teleport.external_title",
+        "fallback": "Dialog Teleport"
+    },
+    "actions": [
+        {
+            "label": {
+                "text": "Edit Entries",
+                "color": "yellow"
+            },
+            "width": 100
+        },
+        {
+            "label": {
+                "text": "Remove Entries",
+                "color": "red"
+            },
+            "width": 100
+        },
+        {
+            "label": {
+                "text": "Teleport Menu",
+                "color": "green"
+            },
+            "width": 200
+        }
+    ],
+    "exit_action": {
+        "label": {
+            "translate": "dialogs.dialog_teleport.back",
+            "fallback": "Back"
+        }
+    }
+}

@@ -1,0 +1,2 @@
+scoreboard players enable @s yj-war-bet
+dialog show @s {type:"minecraft:notice",title:"Casino War",external_title:"Casino War",body:{type:"minecraft:plain_message",contents:"Your bet"},inputs:[{type:"minecraft:number_range",key:"bet",label:"Bet",start:10,end:1000,step:10,initial:10}],action:{label:"Submit",action:{type:"minecraft:dynamic/run_command",template:"trigger yj-war-bet set $(bet)"}}}
