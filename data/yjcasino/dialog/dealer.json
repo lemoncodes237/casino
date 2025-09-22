@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Dealer Setup",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Set up your dealer below."
+  },
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "facing",
+      "label": "Facing",
+      "options": [
+        {
+          "id": "1",
+          "display": "North",
+          "initial": true
+        },
+        {
+          "id": "2",
+          "display": "East",
+          "initial": false
+        },
+        {
+          "id": "3",
+          "display": "South",
+          "initial": false
+        },
+        {
+          "id": "4",
+          "display": "West",
+          "initial": false
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "game",
+      "label": "Game to Deal",
+      "options": [
+        {
+          "id": "1",
+          "display": "Blackjack",
+          "initial": true
+        },
+        {
+          "id": "2",
+          "display": "Casino War",
+          "initial": false
+        }
+      ]
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "min_bet",
+      "label": "Min Bet",
+      "start": 0,
+      "end": 1000,
+      "step": 1,
+      "initial": 1
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "max_bet",
+      "label": "Max Bet",
+      "start": 0,
+      "end": 1000,
+      "step": 1,
+      "initial": 1
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "casino",
+      "label": "Your Responsibility",
+      "start": 0,
+      "end": 100,
+      "step": 1,
+      "initial": 0
+    }
+  ],
+  "actions": [
+    {
+      "label": "Done",
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "data modify storage yjcasino:dealer details set value [$(facing),$(game),$(min_bet),$(max_bet),$(casino)]"
+      }
+    },
+    {
+      "label": "Cancel",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "tag @a remove making-dealer"
+      }
+    },
+    {
+      "label": "Delete Dealer",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "function yjcasino:setup/delete_dealer"
+      }
+    }
+  ]
+}

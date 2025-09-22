@@ -1,5 +1,5 @@
 function yjcasino:money/delete_diamonds with storage yjcasino:temp
-scoreboard players operation @s deposit-money-yj *= $hundred yj-casino-var
+scoreboard players operation @s deposit-money-yj *= $ten yj-casino-var
 
 execute store result storage yjcasino:balance id int 1 run scoreboard players get @s yj-id
 function yjcasino:money/get_balance with storage yjcasino:balance
