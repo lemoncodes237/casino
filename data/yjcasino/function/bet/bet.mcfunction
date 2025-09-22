@@ -1,0 +1,20 @@
+execute store result storage yjcasino:balance id int 1 run scoreboard players get @s yj-id
+function yjcasino:money/get_balance with storage yjcasino:balance
+
+scoreboard players operation $yj-temp yj-money = @s yj-money
+execute if score @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] yj-dealer-minbet > $yj-temp yj-money run return run tellraw @s ["You don't have enough money to bet at this table! Minimum Bet: $",{"score":{"objective":"yj-dealer-minbet","name":"@e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest]"}}]
+
+execute if entity @e[type=interaction,tag=yj-bet-spot-used,distance=..1,limit=1,sort=nearest] run return run tellraw @s "Someone is already betting on that spot!"
+execute if entity @e[type=interaction,tag=yj-bet-spot-in-play,distance=..1,limit=1,sort=nearest] run return run tellraw @s "Please wait for this game to finish first!"
+
+tag @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] add yj-bet-spot-used
+
+# If there was a last bet, save it!
+execute unless score @s yj-casino-last-bet matches -2147483648..2147483647 run scoreboard players set @s yj-casino-last-bet 0
+scoreboard players operation $yj-temp yj-casino-var = @s yj-casino-last-bet
+
+scoreboard players operation @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] yj-player-id = @s yj-id
+
+execute as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run function yjcasino:bet/get_data
+
+execute if entity @e[type=interaction,scores={yj-dealer-game=2},tag=yj-bet-spot,distance=..1] run function yjcasino:war/bet with storage yjcasino:bet

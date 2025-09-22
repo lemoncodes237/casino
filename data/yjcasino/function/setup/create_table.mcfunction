@@ -58,3 +58,27 @@ setblock ^3 ^1 ^3 heavy_weighted_pressure_plate
 setblock ^-3 ^1 ^3 heavy_weighted_pressure_plate
 setblock ^-4 ^1 ^1 heavy_weighted_pressure_plate
 setblock ^4 ^1 ^1 heavy_weighted_pressure_plate
+
+summon interaction ^ ^1 ^4 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
+summon interaction ^3 ^1 ^3 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
+summon interaction ^-3 ^1 ^3 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
+summon interaction ^-4 ^1 ^1 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
+summon interaction ^4 ^1 ^1 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
+execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-game = $yj-dealer-game yj-casino-temp
+execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-minbet = $yj-dealer-minbet yj-casino-temp
+execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-maxbet = $yj-dealer-maxbet yj-casino-temp
+execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-responsibility = $yj-dealer-responsibility yj-casino-temp
+scoreboard players operation $yj-temp yj-casino-temp = @s yj-id
+execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-id = $yj-temp yj-casino-temp
+
+summon marker ~ ~ ~ {Tags:["yj-temp-marker"]}
+execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] at @s run rotate @s facing entity @e[type=marker,tag=yj-temp-marker,distance=..10,limit=1,sort=nearest]
+kill @e[type=marker,tag=yj-temp-marker,distance=..2,limit=1,sort=nearest]
+
+tag @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] remove yj-bet-spot-temp
+
+summon text_display ^ ^1.2 ^4 {text:"",billboard:center,Tags:["yj-bet-display"]}
+summon text_display ^3 ^1.2 ^3 {text:"",billboard:center,Tags:["yj-bet-display"]}
+summon text_display ^-3 ^1.2 ^3 {text:"",billboard:center,Tags:["yj-bet-display"]}
+summon text_display ^-4 ^1.2 ^1 {text:"",billboard:center,Tags:["yj-bet-display"]}
+summon text_display ^4 ^1.2 ^1 {text:"",billboard:center,Tags:["yj-bet-display"]}

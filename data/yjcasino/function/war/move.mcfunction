@@ -1,0 +1,13 @@
+scoreboard players set $yj-roll yj-casino-temp -1
+execute positioned ^4 ^1 ^1 facing ^8 ^ ^2 if score @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] yj-cards matches 0 positioned ^ ^0.05 ^-0.5 run function yjcasino:card/deal_card
+execute if score $yj-roll yj-casino-temp matches 0.. positioned ^4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] run return run function yjcasino:war/register
+execute positioned ^3 ^1 ^3 facing ^6 ^ ^6 if score @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] yj-cards matches 0 positioned ^ ^0.05 ^-0.5 run function yjcasino:card/deal_card
+execute if score $yj-roll yj-casino-temp matches 0.. positioned ^3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] run return run function yjcasino:war/register
+execute positioned ^0 ^1 ^4 facing ^0 ^ ^8 if score @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] yj-cards matches 0 positioned ^ ^0.05 ^-0.5 run function yjcasino:card/deal_card
+execute if score $yj-roll yj-casino-temp matches 0.. positioned ^0 ^1 ^4 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] run return run function yjcasino:war/register
+execute positioned ^-3 ^1 ^3 facing ^-6 ^ ^6 if score @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] yj-cards matches 0 positioned ^ ^0.05 ^-0.5 run function yjcasino:card/deal_card
+execute if score $yj-roll yj-casino-temp matches 0.. positioned ^-3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] run return run function yjcasino:war/register
+execute positioned ^-4 ^1 ^1 facing ^-8 ^ ^2 if score @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] yj-cards matches 0 positioned ^ ^0.05 ^-0.5 run function yjcasino:card/deal_card
+execute if score $yj-roll yj-casino-temp matches 0.. positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] run return run function yjcasino:war/register
+execute if score @s yj-cards matches 0 positioned ^ ^1 ^1.8 facing ^ ^ ^3 run function yjcasino:card/deal_card
+execute if score @s yj-cards matches 0 run function yjcasino:war/register

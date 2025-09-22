@@ -1,2 +1,2 @@
-scoreboard players enable @s yj-war-bet
-dialog show @s {type:"minecraft:notice",title:"Casino War",external_title:"Casino War",body:{type:"minecraft:plain_message",contents:"Your bet"},inputs:[{type:"minecraft:number_range",key:"bet",label:"Bet",start:10,end:1000,step:10,initial:10}],action:{label:"Submit",action:{type:"minecraft:dynamic/run_command",template:"trigger yj-war-bet set $(bet)"}}}
+scoreboard players enable @s yj-bet
+$dialog show @s {type:"minecraft:confirmation",title:"Casino War",body:{type:"minecraft:plain_message",contents:"How much do you want to bet?"},inputs:[{type:"minecraft:number_range",key:"bet",label:"Bet",start:$(minbet),end:$(maxbet),step:1,initial:$(lastbet)}],yes:{label:"Confirm",action:{type:"minecraft:dynamic/run_command",template:"trigger yj-bet set $(betstr)"}},no:{label:"Cancel",action:{type:"minecraft:run_command",command:"trigger yj-bet set -2"}}}

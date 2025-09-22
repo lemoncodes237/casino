@@ -1,0 +1,1 @@
+function yjcasino:setup/summon_dealer
