@@ -1,0 +1,1 @@
+$tellraw @s ["Transaction Successful! Your balance: ",{"text":"$$(var)","color":"aqua"}]

@@ -4,8 +4,6 @@ scoreboard players operation $yj-suit yj-casino-temp /= $thirteen yj-casino-var
 scoreboard players operation $yj-rank yj-casino-temp = $yj-roll yj-casino-temp
 scoreboard players operation $yj-rank yj-casino-temp %= $thirteen yj-casino-var
 
-tellraw @a [{"score":{"objective":"yj-casino-temp","name":"$yj-suit"}}]
-
 execute if score $yj-suit yj-casino-temp matches 0 run function yjcasino:card/heart
 execute if score $yj-suit yj-casino-temp matches 1 run function yjcasino:card/club
 execute if score $yj-suit yj-casino-temp matches 2 run function yjcasino:card/diamond

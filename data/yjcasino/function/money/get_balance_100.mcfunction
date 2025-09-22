@@ -1,0 +1,1 @@
+$execute store result score @s yj-money run data get storage yjcasino:balance balance[$(id)]

@@ -27,3 +27,6 @@ execute as @a if score @s yj-bet matches -2 at @s run function yjcasino:bet/bet_
 
 execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=!yj-dealer-playing] at @s run function yjcasino:bet/dealer_time
 execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=yj-dealer-playing] at @s run function yjcasino:bet/move
+
+# Needed for Casino War
+execute as @a if score @s yj-war-decision matches 1.. at @s run function yjcasino:war/decision

@@ -1,2 +1,2 @@
-execute as @e[type=interaction] run return 0
-say hi
+dialog show @s minecraft:custom_options
+dialog show @s minecraft:quick_actions
