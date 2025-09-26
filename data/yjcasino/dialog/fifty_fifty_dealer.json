@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Fifty-Fifty Dealer Setup",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Set up your dealer below."
+  },
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "commission",
+      "label": "% Commission (0 for fair flip)",
+      "start": 0,
+      "end": 5,
+      "step": 1,
+      "initial": 0
+    }
+  ],
+  "exit_action": {
+    "label": "Cancel"
+  },
+  "actions": [
+    {
+      "label": "Done",
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "function yjcasino:setup/fifty_fifty_dealer_setup {commission:$(commission)}"
+      }
+    },
+    {
+      "label": "Delete Dealer",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "function yjcasino:setup/delete_dealer"
+      }
+    }
+  ]
+}

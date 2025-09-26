@@ -1,6 +1,6 @@
 {
   "type": "minecraft:confirmation",
-  "title": "Casino War",
+  "title": "War",
   "body": {
     "type": "minecraft:plain_message",
     "contents": "A tie! Do you want to go to war and double your bet or surrender half your bet? (If you go to war and you tie or win, you will win your original bet only)",

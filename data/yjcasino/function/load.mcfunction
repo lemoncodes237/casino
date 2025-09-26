@@ -12,6 +12,7 @@ scoreboard objectives add yj-money dummy
 scoreboard objectives add yj-casino-temp dummy
 scoreboard objectives add yj-casino-var dummy
 
+scoreboard objectives add yj-dealer-rotation dummy
 scoreboard objectives add yj-dealer-game dummy
 scoreboard objectives add yj-dealer-minbet dummy
 scoreboard objectives add yj-dealer-maxbet dummy
@@ -31,6 +32,10 @@ scoreboard objectives add dealer-click custom:talked_to_villager
 
 scoreboard objectives add yj-casino-last-bet dummy
 scoreboard objectives add yj-bet trigger
+scoreboard objectives add yj-original-bet trigger
+
+# Fifty Fifty
+scoreboard objectives add yj-fifty-fifty-commission dummy
 
 scoreboard objectives add yj-war-decision trigger
 
@@ -42,3 +47,4 @@ scoreboard players set $threehundred yj-casino-var 300
 scoreboard players set $thousand yj-casino-var 1000
 scoreboard players set $thirteen yj-casino-var 13
 scoreboard players set $two yj-casino-var 2
+scoreboard players set $negation yj-casino-var -1

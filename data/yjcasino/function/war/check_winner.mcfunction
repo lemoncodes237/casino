@@ -1,3 +1,4 @@
+# Run by interaction entity
 # End stage
 scoreboard players set @s yj-stage 100
 

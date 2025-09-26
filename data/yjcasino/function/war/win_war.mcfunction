@@ -1,3 +1,10 @@
+# The owner loses some money depending on responsbility
+scoreboard players operation $yj-arg2 yj-casino-var = @s yj-bet
+scoreboard players operation $yj-arg2 yj-casino-var *= @s yj-dealer-responsibility
+scoreboard players operation $yj-arg2 yj-casino-var *= $negation yj-casino-var
+scoreboard players operation $yj-arg1 yj-casino-var = @s yj-id
+function yjcasino:change_money
+
 execute store result storage yjcasino:balance id int 1 run scoreboard players get @s yj-player-id
 function yjcasino:money/get_balance_100 with storage yjcasino:balance
 

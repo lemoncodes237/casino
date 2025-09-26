@@ -1,7 +1,7 @@
 # copy the score of the fake player to the player
 scoreboard players operation @s yj-id = $yj-total yj-id
 
-execute store result storage yjcasino:balance yj-id int 1 run scoreboard players get @s yj-id
+execute store result storage yjcasino:balance id int 1 run scoreboard players get @s yj-id
 data modify storage yjcasino:balance var set value 0
 
 data modify storage yjcasino:balance balance append value 0

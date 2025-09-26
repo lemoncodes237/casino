@@ -1,8 +1,10 @@
-execute store result score $yj-dealer-rotation yj-casino-temp run data get storage yjcasino:dealer details[0]
-execute store result score $yj-dealer-game yj-casino-temp run data get storage yjcasino:dealer details[1]
-execute store result score $yj-dealer-minbet yj-casino-temp run data get storage yjcasino:dealer details[2]
-execute store result score $yj-dealer-maxbet yj-casino-temp run data get storage yjcasino:dealer details[3]
-execute store result score $yj-dealer-responsibility yj-casino-temp run data get storage yjcasino:dealer details[4]
+$scoreboard players set @s yj-dealer-rotation $(facing)
+$scoreboard players set @s yj-dealer-game $(game)
+$scoreboard players set @s yj-dealer-minbet $(min_bet)
+$scoreboard players set @s yj-dealer-maxbet $(max_bet)
+$scoreboard players set @s yj-dealer-responsibility $(responsibility)
 
-data modify storage yjcasino:dealer details set value [0]
-execute as @a[tag=making-dealer,limit=1] at @s run function yjcasino:setup/modify_dealer
+# If more setup required, send them to the next menu
+execute if score @s yj-dealer-game matches 1 run return run dialog show @s yjcasino:fifty_fifty_dealer
+
+function yjcasino:setup/modify_dealer

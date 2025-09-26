@@ -1,4 +1,2 @@
-tag @s remove making-dealer
-
 execute at @s positioned ^ ^ ^2 as @e[type=villager,tag=yj-dealer,distance=..2,tag=yj-dealer-setup] at @s run function yjcasino:setup/delete_table
 execute at @s positioned ^ ^ ^2 as @e[type=villager,tag=yj-dealer,distance=..2] at @s run kill @s

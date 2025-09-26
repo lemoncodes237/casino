@@ -1,3 +1,10 @@
+# The owner wins some money depending on responsbility
+scoreboard players operation $yj-arg2 yj-casino-var = @s yj-bet
+scoreboard players operation $yj-arg2 yj-casino-var *= @s yj-dealer-responsibility
+scoreboard players operation $yj-arg2 yj-casino-var /= $two yj-casino-var
+scoreboard players operation $yj-arg1 yj-casino-var = @s yj-id
+function yjcasino:change_money
+
 scoreboard players operation @s yj-bet *= $fifty yj-casino-var
 scoreboard players operation @s yj-money += @s yj-bet
 

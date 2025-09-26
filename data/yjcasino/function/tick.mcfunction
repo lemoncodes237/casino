@@ -19,14 +19,11 @@ execute as @a if score @s dealer-click matches 1.. at @s run function yjcasino:s
 execute as @e[type=interaction,tag=yj-bet-spot] at @s on target run function yjcasino:bet/bet
 execute as @e[type=interaction,tag=yj-bet-spot] run data remove entity @s interaction
 
-execute store result score #test-yj yj-casino-temp run data get storage yjcasino:dealer details[0]
-execute if score #test-yj yj-casino-temp matches 1.. run function yjcasino:setup/dealer_setup
-
 execute as @a if score @s yj-bet matches 0.. at @s run function yjcasino:bet/bet_finish
 execute as @a if score @s yj-bet matches -2 at @s run function yjcasino:bet/bet_cancel
 
 execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=!yj-dealer-playing] at @s run function yjcasino:bet/dealer_time
 execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=yj-dealer-playing] at @s run function yjcasino:bet/move
 
-# Needed for Casino War
+# Needed for War
 execute as @a if score @s yj-war-decision matches 1.. at @s run function yjcasino:war/decision
