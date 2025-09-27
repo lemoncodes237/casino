@@ -27,3 +27,7 @@ execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=yj-dealer-play
 
 # Needed for War
 execute as @a if score @s yj-war-decision matches 1.. at @s run function yjcasino:war/decision
+
+# Needed for Blackjack
+execute as @a if score @s yj-blackjack-insurance-decision matches 1.. at @s run function yjcasino:blackjack/insurance_decision
+execute as @a if score @s yj-blackjack-decision matches 1.. at @s run function yjcasino:blackjack/check_decision

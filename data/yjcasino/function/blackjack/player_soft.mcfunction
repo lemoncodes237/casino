@@ -1,0 +1,1 @@
+$data modify storage yjcasino:dealer player set value "Soft $(player)"

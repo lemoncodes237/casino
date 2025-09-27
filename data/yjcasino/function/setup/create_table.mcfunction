@@ -74,6 +74,9 @@ execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboar
 # Fifty Fifty - Need commission data
 execute if score $yj-dealer-game yj-casino-temp matches 1 as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-fifty-fifty-commission = $yj-commission yj-casino-temp
 
+# Blackjack - Need rules data
+execute if score $yj-dealer-game yj-casino-temp matches 3 as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run function yjcasino:setup/blackjack_modify
+
 summon marker ~ ~ ~ {Tags:["yj-temp-marker"]}
 execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] at @s run rotate @s facing entity @e[type=marker,tag=yj-temp-marker,distance=..10,limit=1,sort=nearest]
 kill @e[type=marker,tag=yj-temp-marker,distance=..2,limit=1,sort=nearest]

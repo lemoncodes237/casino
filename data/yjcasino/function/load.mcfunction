@@ -21,7 +21,10 @@ scoreboard objectives add yj-dealer-time dummy
 scoreboard objectives add yj-cards dummy
 scoreboard objectives add yj-stage dummy
 scoreboard objectives add yj-total dummy
+scoreboard objectives add yj-last-card dummy
 scoreboard objectives add yj-dealer-time-to-finish dummy
+
+scoreboard objectives add yj-hole-card dummy
 
 scoreboard objectives add deposit-money-yj trigger
 scoreboard objectives add withdraw-money-yj trigger
@@ -36,15 +39,21 @@ scoreboard objectives add yj-original-bet trigger
 
 # Fifty Fifty
 scoreboard objectives add yj-fifty-fifty-commission dummy
-
+# War
 scoreboard objectives add yj-war-decision trigger
+# Blackjack
+scoreboard objectives add yj-blackjack-insurance-decision trigger
+scoreboard objectives add yj-blackjack-decision trigger
 
 scoreboard players set $ten yj-casino-var 10
 scoreboard players set $hundred yj-casino-var 100
 scoreboard players set $fifty yj-casino-var 50
+scoreboard players set $onefifty yj-casino-var 150
 scoreboard players set $twohundred yj-casino-var 200
+scoreboard players set $twofifty yj-casino-var 250
 scoreboard players set $threehundred yj-casino-var 300
 scoreboard players set $thousand yj-casino-var 1000
 scoreboard players set $thirteen yj-casino-var 13
 scoreboard players set $two yj-casino-var 2
+scoreboard players set $three yj-casino-var 3
 scoreboard players set $negation yj-casino-var -1

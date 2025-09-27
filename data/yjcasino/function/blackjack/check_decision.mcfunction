@@ -1,0 +1,7 @@
+execute if score @s yj-blackjack-decision matches 1 as @e[type=interaction,tag=yj-bet-spot-in-play,tag=yj-blackjack-awaiting] at @s if score @s yj-dealer-game matches 3 if score @s yj-player-id = $yj-temp yj-id run function yjcasino:blackjack/action/hit
+execute if score @s yj-blackjack-decision matches 2 as @e[type=interaction,tag=yj-bet-spot-in-play,tag=yj-blackjack-awaiting] at @s if score @s yj-dealer-game matches 3 if score @s yj-player-id = $yj-temp yj-id run function yjcasino:blackjack/action/stand
+execute if score @s yj-blackjack-decision matches 3 as @e[type=interaction,tag=yj-bet-spot-in-play,tag=yj-blackjack-awaiting] at @s if score @s yj-dealer-game matches 3 if score @s yj-player-id = $yj-temp yj-id run function yjcasino:blackjack/action/double
+execute if score @s yj-blackjack-decision matches 4 as @e[type=interaction,tag=yj-bet-spot-in-play,tag=yj-blackjack-awaiting] at @s if score @s yj-dealer-game matches 3 if score @s yj-player-id = $yj-temp yj-id run function yjcasino:blackjack/action/split
+execute if score @s yj-blackjack-decision matches 5 as @e[type=interaction,tag=yj-bet-spot-in-play,tag=yj-blackjack-awaiting] at @s if score @s yj-dealer-game matches 3 if score @s yj-player-id = $yj-temp yj-id run function yjcasino:blackjack/action/surrender
+
+scoreboard players set @s yj-blackjack-decision 0

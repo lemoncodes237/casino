@@ -2,3 +2,4 @@ scoreboard players set @s yj-dealer-time 0
 
 execute if score @s yj-dealer-game matches 1 run function yjcasino:fifty_fifty/move
 execute if score @s yj-dealer-game matches 2 run function yjcasino:war/move
+execute if score @s yj-dealer-game matches 3 run function yjcasino:blackjack/move

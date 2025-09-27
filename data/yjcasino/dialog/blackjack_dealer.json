@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Fifty-Fifty Dealer Setup",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Set up your dealer below."
+  },
+  "inputs": [
+    {
+      "type": "minecraft:boolean",
+      "key": "s17",
+      "label": "S17 (Dealer stands on Soft 17)",
+      "on_true": "1",
+      "on_false": "0"
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "das",
+      "label": "DAS (Double After Split allowed)",
+      "initial": true,
+      "on_true": "1",
+      "on_false": "0"
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "rsa",
+      "label": "RSA (Resplit Aces allowed)",
+      "on_true": "1",
+      "on_false": "0"
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "ls",
+      "label": "LS (Late Surrender allowed)",
+      "on_true": "1",
+      "on_false": "0"
+    }
+  ],
+  "exit_action": {
+    "label": "Cancel"
+  },
+  "actions": [
+    {
+      "label": "Done",
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "function yjcasino:setup/blackjack_dealer_setup {s17:$(s17),das:$(das),rsa:$(rsa),ls:$(ls)}"
+      }
+    },
+    {
+      "label": "Delete Dealer",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "function yjcasino:setup/delete_dealer"
+      }
+    }
+  ]
+}

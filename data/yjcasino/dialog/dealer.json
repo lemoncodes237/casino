@@ -47,6 +47,11 @@
           "id": "2",
           "display": "War",
           "initial": false
+        },
+        {
+          "id": "3",
+          "display": "Blackjack",
+          "initial": false
         }
       ]
     },

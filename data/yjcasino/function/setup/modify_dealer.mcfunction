@@ -26,5 +26,8 @@ scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,s
 # Fifty Fifty - Need commission data
 execute if score @s yj-dealer-game matches 1 run scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-fifty-fifty-commission = $yj-commission yj-casino-temp
 
+# Blackjack - Need rules
+execute if score @s yj-dealer-game matches 3 as @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] run function yjcasino:setup/blackjack_modify
+
 tag @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] add yj-dealer-setup
 tag @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] remove yj-dealer-temp

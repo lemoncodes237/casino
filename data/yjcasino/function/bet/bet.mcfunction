@@ -24,3 +24,4 @@ execute as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest
 
 execute if entity @e[type=interaction,scores={yj-dealer-game=1},tag=yj-bet-spot,distance=..1] run function yjcasino:fifty_fifty/bet with storage yjcasino:bet
 execute if entity @e[type=interaction,scores={yj-dealer-game=2},tag=yj-bet-spot,distance=..1] run function yjcasino:war/bet with storage yjcasino:bet
+execute if entity @e[type=interaction,scores={yj-dealer-game=3},tag=yj-bet-spot,distance=..1] run function yjcasino:blackjack/bet with storage yjcasino:bet
