@@ -1,6 +1,6 @@
 # Reveal the hole card
 scoreboard players operation $yj-arg1 yj-casino-var = @s yj-hole-card
-execute positioned ^-0.1 ^1.06 ^1.9 facing ^ ^ ^3 run function yjcasino:card/deal_specific_card
+execute positioned ^0.1 ^1.02 ^1.9 facing ^ ^ ^3 run function yjcasino:card/deal_specific_card
 scoreboard players add @s yj-stage 1
 
 scoreboard players add @s yj-hole-card 1

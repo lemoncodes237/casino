@@ -13,4 +13,4 @@ execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-b
 # Finish game once everything is done after 3 seconds
 scoreboard players add @s yj-dealer-time-to-finish 1
 
-execute if score @s yj-dealer-time-to-finish matches 7.. run function yjcasino:bet/reset
+execute if score @s yj-dealer-time-to-finish matches 6.. run function yjcasino:bet/reset

@@ -1,1 +1,1 @@
-$data merge entity @e[type=text_display,tag=yj-insurance-display,distance=..1,sort=nearest,limit=1] {text:"$$(bet)"}
+$summon text_display ~ ~ ~ {Tags:["yj-insurance-display"],text:"$$(bet)",billboard:center}

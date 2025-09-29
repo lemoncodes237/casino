@@ -7,12 +7,11 @@ TO-DO before BETA release:
 - Payment System
 
 
-TODOS:
-- Make double actually double
-- Implement splits
-- Deal with cards going to weird places
-- Fix insurance
 
+TODOS:
+- Check if double/split is even possible with the player's money
+
+tag: yj-blackjack-ace-split1
 
 Make original bet a score so we can easily double/split in blackjack
 
@@ -40,10 +39,20 @@ STAND CASE
 Stage 75 (Dealer): Done with hand.
 Stage 75: Done with hand. Get paid/lose bet. Go to Stage 100.
 
+Stage 81: Done with hand. Split.
+
 
 SPLIT CASES
 Stage 80 (Player): The player split. Now deal with yj-stage-first through yj-stage-fourth to figure out what to do.
 Stage 90 (Player): Get dealt a card, then go to stage 6.
+
+SPLIT STAGES (actual stage numbers)
+Stage 1: Get a card dealt.
+Stage 2-60: 2 mod 3: Show decision screen. 0 mod 3: Wait. 1 mod 3: Deal with decision.
+Stage 70: Busted. Take bet and set stage to 100.
+Stage 98: Dealt a card. If busted, go to stage 70. This is doubling case.
+Stage 99: Wait for payout/loss
+Stage 100: Done
 
 DEALER BLACKJACK
 Stage 99 (Player): Lose initial bet (or push) and pay out insurance bets

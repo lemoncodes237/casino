@@ -9,7 +9,7 @@ execute store result storage yjcasino:balance id int 1 run scoreboard players ge
 function yjcasino:money/get_balance_100 with storage yjcasino:balance
 
 # Pay even money
-scoreboard players operation @s yj-bet *= $twohundred yj-casino-var
+scoreboard players operation @s yj-bet *= $twofifty yj-casino-var
 scoreboard players operation @s yj-money += @s yj-bet
 
 execute store result storage yjcasino:balance var double 1 run scoreboard players get @s yj-money

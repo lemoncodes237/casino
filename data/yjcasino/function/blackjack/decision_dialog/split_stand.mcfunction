@@ -1,0 +1,2 @@
+scoreboard players enable @s yj-blackjack-decision
+$dialog show @s {type:"minecraft:multi_action",title:"Blackjack",body:{type:"minecraft:plain_message",contents:"$(player) vs $(dealer)"},can_close_with_escape:0,actions:[{label:"Stand",action:{type:"minecraft:run_command",command:"trigger yj-blackjack-decision set 2"}},{label:"Split",action:{type:"minecraft:run_command",command:"trigger yj-blackjack-decision set 4"}}]}

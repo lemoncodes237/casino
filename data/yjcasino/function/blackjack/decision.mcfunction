@@ -1,11 +1,15 @@
 # Add a step
 scoreboard players add @s yj-stage 1
 
+# Save Player id
+scoreboard players operation $yj-temp yj-id = @s yj-player-id
+
 # Do you have a BLACKJACK???
 execute if score @s yj-total matches 11 if entity @s[tag=yj-blackjack-ace] if score @s yj-cards matches 2 at @s run return run function yjcasino:blackjack/player_blackjack
 
 # Force quit at 21
-execute if score @s yj-total matches 21 run return run scoreboard players set @s yj-stage 99
+execute if score @s yj-total matches 21 as @a if score @s yj-id = $yj-temp yj-id at @s run playsound entity.experience_orb.pickup master @s ~ ~ ~
+execute if score @s yj-total matches 21 run return run scoreboard players set @s yj-stage 74
 
 # Figure out what you're allowed to do
 scoreboard players set $yj-can-double yj-casino-temp 0
@@ -22,9 +26,6 @@ scoreboard players set $yj-can-surrender yj-casino-temp 0
 # Can surrender if rules allow for it with any two cards
 execute if score @s yj-cards matches 2 if entity @s[tag=yj-ls] run scoreboard players set $yj-can-surrender yj-casino-temp 1
 
-# Save Player id
-scoreboard players operation $yj-temp yj-id = @s yj-player-id
-
 scoreboard players set $yj-temp yj-casino-temp 0
 scoreboard players operation $yj-temp yj-total = @s yj-total
 execute if entity @s[tag=yj-blackjack-ace] if score $yj-temp yj-total matches 0..11 run scoreboard players set $yj-temp yj-casino-temp 1
@@ -38,12 +39,10 @@ execute if score $yj-temp-dealer yj-total matches 1 run data modify storage yjca
 
 tag @s add yj-blackjack-awaiting
 
-scoreboard players operation $yj-temp yj-id = @s yj-player-id
-
-execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 1 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double_split_surrender with storage yjcasino:blackjack
-execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 0 if score $yj-can-split yj-casino-temp matches 1 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double_surrender with storage yjcasino:blackjack
-execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 0 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double_split with storage yjcasino:blackjack
-execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 0 if score $yj-can-split yj-casino-temp matches 0 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double with storage yjcasino:blackjack
-execute if score $yj-can-double yj-casino-temp matches 0 if score $yj-can-split yj-casino-temp matches 0 if score $yj-can-split yj-casino-temp matches 0 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/none with storage yjcasino:blackjack
+execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 1 if score $yj-can-surrender yj-casino-temp matches 1 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double_split_surrender with storage yjcasino:blackjack
+execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 0 if score $yj-can-surrender yj-casino-temp matches 1 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double_surrender with storage yjcasino:blackjack
+execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 1 if score $yj-can-surrender yj-casino-temp matches 0 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double_split with storage yjcasino:blackjack
+execute if score $yj-can-double yj-casino-temp matches 1 if score $yj-can-split yj-casino-temp matches 0 if score $yj-can-surrender yj-casino-temp matches 0 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/double with storage yjcasino:blackjack
+execute if score $yj-can-double yj-casino-temp matches 0 if score $yj-can-split yj-casino-temp matches 0 if score $yj-can-surrender yj-casino-temp matches 0 as @a if score @s yj-id = $yj-temp yj-id run return run function yjcasino:blackjack/decision_dialog/none with storage yjcasino:blackjack
 
 tellraw @a "BUG!"

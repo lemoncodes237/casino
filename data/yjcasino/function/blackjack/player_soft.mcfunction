@@ -1,1 +1,1 @@
-$data modify storage yjcasino:dealer player set value "Soft $(player)"
+$data modify storage yjcasino:blackjack player set value "Soft $(player)"

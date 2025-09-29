@@ -9,4 +9,4 @@ execute store result storage yjcasino:balance var double 1 run scoreboard player
 scoreboard players operation $yj-temp yj-id = @s yj-player-id
 function yjcasino:money/set_balance with storage yjcasino:balance
 
-execute as @a if score @s yj-id = $yj-temp yj-id at @s run playsound block.wood.break master @s ~ ~ ~
+execute as @a if score @s yj-id = $yj-temp yj-id at @s run playsound entity.player.attack.sweep master @s ~ ~ ~
