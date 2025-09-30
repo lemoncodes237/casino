@@ -64,12 +64,12 @@ summon interaction ^3 ^1 ^3 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],
 summon interaction ^-3 ^1 ^3 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
 summon interaction ^-4 ^1 ^1 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
 summon interaction ^4 ^1 ^1 {height:0.3,Tags:["yj-bet-spot","yj-bet-spot-temp"],response:true}
-execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-game = $yj-dealer-game yj-casino-temp
-execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-minbet = $yj-dealer-minbet yj-casino-temp
-execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-maxbet = $yj-dealer-maxbet yj-casino-temp
-execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-responsibility = $yj-dealer-responsibility yj-casino-temp
+execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-game = $yj-dealer-game yj-casino-temp
+execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-minbet = $yj-dealer-minbet yj-casino-temp
+execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-maxbet = $yj-dealer-maxbet yj-casino-temp
+execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-responsibility = $yj-dealer-responsibility yj-casino-temp
 scoreboard players operation $yj-temp yj-casino-temp = @s yj-id
-execute as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-id = $yj-temp yj-casino-temp
+execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-id = $yj-temp yj-casino-temp
 
 # Fifty Fifty - Need commission data
 execute if score $yj-dealer-game yj-casino-temp matches 1 as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-fifty-fifty-commission = $yj-commission yj-casino-temp

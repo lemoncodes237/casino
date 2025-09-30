@@ -14,4 +14,4 @@ execute if entity @s[tag=yj-blackjack-ace,tag=yj-s17] if score @s yj-total match
 
 scoreboard players add @s yj-cards 1
 
-tellraw @a [{"score":{"objective":"yj-total","name":"@s"}}]
+# tellraw @a [{"score":{"objective":"yj-total","name":"@s"}}]

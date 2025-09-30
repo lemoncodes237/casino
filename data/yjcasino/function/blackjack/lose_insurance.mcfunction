@@ -1,5 +1,5 @@
 # Move stage
-# 2 bc i made a mistake in code
+# Y-J M-ine-craft!
 scoreboard players add @s yj-stage 1
 
 # If no insurance, return
