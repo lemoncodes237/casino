@@ -29,5 +29,8 @@ execute if score @s yj-dealer-game matches 1 run scoreboard players operation @e
 # Blackjack - Need rules
 execute if score @s yj-dealer-game matches 3 as @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] run function yjcasino:setup/blackjack_modify
 
+# Baccarat - Need commission and tie bet
+execute if score @s yj-dealer-game matches 4 as @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] run function yjcasino:setup/baccarat_modify
+
 tag @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] add yj-dealer-setup
 tag @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] remove yj-dealer-temp

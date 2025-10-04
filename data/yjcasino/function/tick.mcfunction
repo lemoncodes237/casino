@@ -20,7 +20,9 @@ execute as @e[type=interaction,tag=yj-bet-spot] at @s on target run function yjc
 execute as @e[type=interaction,tag=yj-bet-spot] run data remove entity @s interaction
 
 execute as @a if score @s yj-bet matches 0.. at @s run function yjcasino:bet/bet_finish
+execute as @a if score @s yj-special-bet matches 0.. at @s run function yjcasino:bet/special_bet_finish
 execute as @a if score @s yj-bet matches -2 at @s run function yjcasino:bet/bet_cancel
+execute as @a if score @s yj-special-bet matches -2 at @s run function yjcasino:bet/bet_cancel
 
 execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=!yj-dealer-playing] at @s run function yjcasino:bet/dealer_time
 execute as @e[type=villager,tag=yj-dealer,tag=yj-dealer-ready,tag=yj-dealer-playing] at @s run function yjcasino:bet/move

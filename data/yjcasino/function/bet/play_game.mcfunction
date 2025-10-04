@@ -6,6 +6,8 @@ execute positioned ^4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot,distance=..1,
 
 scoreboard players set @s yj-cards 0
 scoreboard players set @s yj-total 0
+scoreboard players set @s yj-cards-banker 0
+scoreboard players set @s yj-total-banker 0
 scoreboard players set @s yj-stage 0
 scoreboard players set @s yj-dealer-time-to-finish 0
 tag @s remove yj-blackjack-ace

@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Baccarat Dealer Setup",
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": "Set up your dealer below."
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": "5% Commission: Banker wins are paid 19-to-20",
+      "width": 300
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": "No Commission: Banker wins with 6 are paid 1-to-2",
+      "width": 300
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": "E-Z: Banker wins with 3-card 7 are pushes",
+      "width": 300
+    }
+  ],
+  "inputs": [
+    {
+      "type": "minecraft:single_option",
+      "key": "commission",
+      "label": "Type",
+      "options": [
+        {
+          "id": "1",
+          "display": "5% Commission"
+        },
+        {
+          "id": "2",
+          "display": "No Commission"
+        },
+        {
+          "id": "3",
+          "display": "E-Z"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "tie",
+      "label": "Tie Bets are Paid",
+      "options": [
+        {
+          "id": "8",
+          "display": "8-to-1"
+        },
+        {
+          "id": "9",
+          "display": "9-to-1"
+        }
+      ]
+    }
+  ],
+  "exit_action": {
+    "label": "Cancel"
+  },
+  "actions": [
+    {
+      "label": "Done",
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "function yjcasino:setup/baccarat_dealer_setup {commission:$(commission),tie:$(tie)}"
+      }
+    },
+    {
+      "label": "Delete Dealer",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "function yjcasino:setup/delete_dealer"
+      }
+    }
+  ]
+}

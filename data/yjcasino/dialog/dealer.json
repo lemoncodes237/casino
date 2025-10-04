@@ -52,6 +52,11 @@
           "id": "3",
           "display": "Blackjack",
           "initial": false
+        },
+        {
+          "id": "4",
+          "display": "Baccarat",
+          "initial": false
         }
       ]
     },

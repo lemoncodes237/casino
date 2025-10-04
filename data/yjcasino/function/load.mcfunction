@@ -25,6 +25,9 @@ scoreboard objectives add yj-last-card dummy
 scoreboard objectives add yj-last-suit dummy
 scoreboard objectives add yj-dealer-time-to-finish dummy
 
+scoreboard objectives add yj-cards-banker dummy
+scoreboard objectives add yj-total-banker dummy
+
 scoreboard objectives add yj-hole-card dummy
 
 scoreboard objectives add deposit-money-yj trigger
@@ -36,7 +39,9 @@ scoreboard objectives add dealer-click custom:talked_to_villager
 
 scoreboard objectives add yj-casino-last-bet dummy
 scoreboard objectives add yj-bet trigger
+scoreboard objectives add yj-special-bet trigger
 scoreboard objectives add yj-original-bet trigger
+scoreboard objectives add yj-bet-type dummy
 
 # Fifty Fifty
 scoreboard objectives add yj-fifty-fifty-commission dummy
@@ -71,3 +76,5 @@ scoreboard players set $thirteen yj-casino-var 13
 scoreboard players set $two yj-casino-var 2
 scoreboard players set $three yj-casino-var 3
 scoreboard players set $negation yj-casino-var -1
+scoreboard players set $ninetyfive yj-casino-var 95
+scoreboard players set $oneninetyfive yj-casino-var 195
