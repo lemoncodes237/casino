@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Triple Card Poker Dealer Setup",
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "Set up your dealer below."
+  },
+  "inputs": [
+    {
+      "type": "minecraft:boolean",
+      "key": "ante",
+      "label": "Ante Bonus (5-to-1 Straight Flush, 4-to-1 Trips, 1-to-1 Straight)",
+      "on_true": "1",
+      "on_false": "0"
+    }
+  ],
+  "exit_action": {
+    "label": "Cancel"
+  },
+  "actions": [
+    {
+      "label": "Done",
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "function yjcasino:setup/triple_card_dealer_setup {ante:$(ante)}"
+      }
+    },
+    {
+      "label": "Delete Dealer",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "function yjcasino:setup/delete_dealer"
+      }
+    }
+  ]
+}

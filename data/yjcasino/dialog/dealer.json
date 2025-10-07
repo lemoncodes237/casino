@@ -57,6 +57,11 @@
           "id": "4",
           "display": "Baccarat",
           "initial": false
+        },
+        {
+          "id": "5",
+          "display": "Triple Card Poker",
+          "initial": false
         }
       ]
     },

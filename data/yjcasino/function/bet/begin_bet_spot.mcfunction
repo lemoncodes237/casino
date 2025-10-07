@@ -10,3 +10,7 @@ tag @s remove yj-blackjack-ace-split1
 tag @s remove yj-blackjack-ace-split2
 tag @s remove yj-blackjack-ace-split3
 tag @s remove yj-blackjack-ace-split4
+
+scoreboard players set @s yj-card1 -1
+scoreboard players set @s yj-card2 -1
+scoreboard players set @s yj-card3 -1

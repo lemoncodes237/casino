@@ -1,6 +1,6 @@
 {
   "type": "minecraft:multi_action",
-  "title": "Fifty-Fifty Dealer Setup",
+  "title": "Blackjack Dealer Setup",
   "body": {
     "type": "minecraft:plain_message",
     "contents": "Set up your dealer below."

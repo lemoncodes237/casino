@@ -32,5 +32,8 @@ execute if score @s yj-dealer-game matches 3 as @e[type=villager,tag=yj-dealer-t
 # Baccarat - Need commission and tie bet
 execute if score @s yj-dealer-game matches 4 as @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] run function yjcasino:setup/baccarat_modify
 
+# Triple Card Poker - Need ante bonus
+execute if score @s yj-dealer-game matches 5 as @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] run function yjcasino:setup/triple_card_modify
+
 tag @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] add yj-dealer-setup
 tag @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] remove yj-dealer-temp

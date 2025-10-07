@@ -12,3 +12,7 @@ scoreboard players set @s yj-stage 0
 scoreboard players set @s yj-dealer-time-to-finish 0
 tag @s remove yj-blackjack-ace
 tag @s add yj-dealer-playing
+
+scoreboard players set @s yj-card1 -1
+scoreboard players set @s yj-card2 -1
+scoreboard players set @s yj-card3 -1

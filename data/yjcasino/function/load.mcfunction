@@ -64,6 +64,11 @@ scoreboard objectives add yj-blackjack-split2-cards dummy
 scoreboard objectives add yj-blackjack-split3-cards dummy
 scoreboard objectives add yj-blackjack-split4-cards dummy
 
+# For decks
+scoreboard objectives add yj-card1 dummy
+scoreboard objectives add yj-card2 dummy
+scoreboard objectives add yj-card3 dummy
+
 scoreboard players set $ten yj-casino-var 10
 scoreboard players set $hundred yj-casino-var 100
 scoreboard players set $fifty yj-casino-var 50
