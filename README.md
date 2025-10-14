@@ -4,6 +4,7 @@ TO-DO before BETA release:
 - Three Card Poker
 - Payment System
 - PREVENT PLAYERS FROM BETTING ON DIFFERENT TABLES BY UTILIZING TABLE ID
+- Triple Card Poker still can deal duplicate cards
 
 
 TODOS:

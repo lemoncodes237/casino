@@ -8,5 +8,6 @@ $scoreboard players set @s yj-dealer-responsibility $(responsibility)
 execute if score @s yj-dealer-game matches 1 run return run dialog show @s yjcasino:fifty_fifty_dealer
 execute if score @s yj-dealer-game matches 3 run return run dialog show @s yjcasino:blackjack_dealer
 execute if score @s yj-dealer-game matches 4 run return run dialog show @s yjcasino:baccarat_dealer
+execute if score @s yj-dealer-game matches 5 run return run dialog show @s yjcasino:triple_card_dealer
 
 function yjcasino:setup/modify_dealer

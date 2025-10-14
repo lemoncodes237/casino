@@ -3,6 +3,7 @@ scoreboard players add @s yj-stage 1
 # Take away the play bet
 scoreboard players operation $yj-arg2 yj-casino-var = @s yj-original-bet
 scoreboard players operation $yj-arg2 yj-casino-var *= $negation yj-casino-var
+scoreboard players operation $yj-arg2 yj-casino-var *= $hundred yj-casino-var
 scoreboard players operation @s yj-bet += @s yj-original-bet
 
 scoreboard players operation $yj-arg1 yj-casino-var = @s yj-player-id

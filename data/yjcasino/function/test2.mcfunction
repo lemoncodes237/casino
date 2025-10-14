@@ -1,4 +1,4 @@
-scoreboard players set $test yj-casino-var 0
+
 scoreboard players add $test yj-casino-var 1
 scoreboard players add $test yj-casino-var 1
 scoreboard players add $test yj-casino-var 1
@@ -100,5 +100,4 @@ scoreboard players add $test yj-casino-var 1
 scoreboard players add $test yj-casino-var 1
 scoreboard players add $test yj-casino-var 1
 
-function yjcasino:test2
-function yjcasino:test2
+tellraw @a [{"score":{"name":"$test","objective":"yj-casino-var"}}]

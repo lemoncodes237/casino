@@ -35,29 +35,17 @@ execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-b
 execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 4 run return 0
 
 # Now the dealer's cards are dealt
-execute if score @s yj-stage matches 0 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^0.5 ^ ^ run return run function yjcasino:triple_card/deal_card
-execute if score @s yj-stage matches 1 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^ ^ ^ run return run function yjcasino:triple_card/deal_card
-execute if score @s yj-stage matches 2 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^-0.5 ^ ^ run return run function yjcasino:triple_card/deal_card
+execute if score @s yj-stage matches 0 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^0.5 ^ ^ run return run function yjcasino:triple_card/deal_card_dealer
+execute if score @s yj-stage matches 1 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^ ^ ^ run return run function yjcasino:triple_card/deal_card_dealer
+execute if score @s yj-stage matches 2 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^-0.5 ^ ^ run return run function yjcasino:triple_card/deal_card_dealer
 
 # Now comparisons are done
+function yjcasino:triple_card/strength {player:"dealer"}
 execute positioned ^4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
 execute positioned ^3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
 execute positioned ^0 ^1 ^4 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
 execute positioned ^-3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
 execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
-
-
-execute if score @s yj-stage matches 0 positioned ^ ^1 ^2.3 facing ^ ^ ^3 run return run function yjcasino:fifty_fifty/deal_card
-
-# After the card is dealt
-scoreboard players operation $yj-temp yj-total = @s yj-total
-
-# Now payouts!
-execute positioned ^4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 0 run return run function yjcasino:fifty_fifty/check_winner
-execute positioned ^3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 0 run return run function yjcasino:fifty_fifty/check_winner
-execute positioned ^0 ^1 ^4 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 0 run return run function yjcasino:fifty_fifty/check_winner
-execute positioned ^-3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 0 run return run function yjcasino:fifty_fifty/check_winner
-execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 0 run return run function yjcasino:fifty_fifty/check_winner
 
 # Finish game once everything is done after 3 seconds
 scoreboard players add @s yj-dealer-time-to-finish 1
