@@ -63,6 +63,8 @@ scoreboard objectives add yj-blackjack-split1-cards dummy
 scoreboard objectives add yj-blackjack-split2-cards dummy
 scoreboard objectives add yj-blackjack-split3-cards dummy
 scoreboard objectives add yj-blackjack-split4-cards dummy
+# Triple Card
+scoreboard objectives add yj-triple-card-decision trigger
 
 # For decks
 scoreboard objectives add yj-card1 dummy
@@ -83,3 +85,5 @@ scoreboard players set $three yj-casino-var 3
 scoreboard players set $negation yj-casino-var -1
 scoreboard players set $ninetyfive yj-casino-var 95
 scoreboard players set $oneninetyfive yj-casino-var 195
+
+data modify storage yjcasino:card all_cards set value ["A♥","2♥","3♥","4♥","5♥","6♥","7♥","8♥","9♥","10♥","J♥","Q♥","K♥","A♣","2♣","3♣","4♣","5♣","6♣","7♣","8♣","9♣","10♣","J♣","Q♣","K♣","A♦","2♦","3♦","4♦","5♦","6♦","7♦","8♦","9♦","10♦","J♦","Q♦","K♦","A♠","2♠","3♠","4♠","5♠","6♠","7♠","8♠","9♠","10♠","J♠","Q♠","K♠"]

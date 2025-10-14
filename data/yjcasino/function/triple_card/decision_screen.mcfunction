@@ -1,0 +1,2 @@
+scoreboard players enable @s yj-triple-card-decision
+$dialog show @s {type:"minecraft:confirmation",title:"Triple Card Poker",body:[{type:"minecraft:plain_message",contents:"$(card1) $(card2) $(card3)"},{type:"minecraft:plain_message",contents:"Would you like to play?"}],yes:{label:"Play",action:{type:"minecraft:run_command",command:"trigger yj-triple-card-decision set 1"}},no:{label:"Fold",action:{type:"minecraft:run_command",command:"trigger yj-triple-card-decision set 2"}}}

@@ -1,0 +1,1 @@
+$data modify storage yjcasino:card card$(index) set from storage yjcasino:card all_cards[$(card)]

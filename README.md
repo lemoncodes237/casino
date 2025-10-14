@@ -1,11 +1,9 @@
 # yj-casino
 
 TO-DO before BETA release:
-- Blackjack
 - Three Card Poker
-- Baccarat (Commission and No Comission Baccarat) - Just Tie, Player, and Banker for now.
 - Payment System
-
+- PREVENT PLAYERS FROM BETTING ON DIFFERENT TABLES BY UTILIZING TABLE ID
 
 
 TODOS:
