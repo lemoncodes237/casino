@@ -34,7 +34,17 @@ execute positioned ^-3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-b
 execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 3 run return run function yjcasino:triple_card/decision
 execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 4 run return 0
 
+# Now the dealer's cards are dealt
+execute if score @s yj-stage matches 0 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^0.5 ^ ^ run return run function yjcasino:triple_card/deal_card
+execute if score @s yj-stage matches 1 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^ ^ ^ run return run function yjcasino:triple_card/deal_card
+execute if score @s yj-stage matches 2 positioned ^ ^1.01 ^1.8 facing ^ ^ ^3 positioned ^-0.5 ^ ^ run return run function yjcasino:triple_card/deal_card
 
+# Now comparisons are done
+execute positioned ^4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
+execute positioned ^3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
+execute positioned ^0 ^1 ^4 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
+execute positioned ^-3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
+execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot-bet,tag=yj-bet-spot-in-play,limit=1,sort=nearest,distance=..1] if score @s yj-stage matches 5 run return run function yjcasino:triple_card/check_winner
 
 
 execute if score @s yj-stage matches 0 positioned ^ ^1 ^2.3 facing ^ ^ ^3 run return run function yjcasino:fifty_fifty/deal_card

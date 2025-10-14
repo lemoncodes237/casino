@@ -12,6 +12,9 @@ scoreboard objectives add yj-money dummy
 scoreboard objectives add yj-casino-temp dummy
 scoreboard objectives add yj-casino-var dummy
 
+# For poker like games
+scoreboard objectives add yj-strength dummy
+
 scoreboard objectives add yj-dealer-rotation dummy
 scoreboard objectives add yj-dealer-game dummy
 scoreboard objectives add yj-dealer-minbet dummy

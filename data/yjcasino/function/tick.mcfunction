@@ -33,3 +33,5 @@ execute as @a if score @s yj-war-decision matches 1.. at @s run function yjcasin
 # Needed for Blackjack
 execute as @a if score @s yj-blackjack-insurance-decision matches 1.. at @s run function yjcasino:blackjack/insurance_decision
 execute as @a if score @s yj-blackjack-decision matches 1.. at @s run function yjcasino:blackjack/check_decision
+
+execute as @a if score @s yj-triple-card-decision matches 1.. at @s run function yjcasino:triple_card/check_decision
