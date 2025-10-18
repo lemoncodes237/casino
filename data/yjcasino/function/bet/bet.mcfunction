@@ -11,6 +11,8 @@ execute if score @s yj-money matches ..0 if score @e[type=interaction,tag=yj-bet
 
 execute if entity @e[type=interaction,tag=yj-bet-spot-used,distance=..1,limit=1,sort=nearest] run return run tellraw @s "Someone is already betting on that spot!"
 execute if entity @e[type=interaction,tag=yj-bet-spot-in-play,distance=..1,limit=1,sort=nearest] run return run tellraw @s "Please wait for this game to finish first!"
+execute as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run scoreboard players operation $yj-temp yj-game-id = @s yj-game-id
+execute if score @s yj-game-id matches 1.. unless score @s yj-game-id = $yj-temp yj-game-id run return run tellraw @s "You cannot bet at more than two games at once!"
 
 tag @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] add yj-bet-spot-used
 

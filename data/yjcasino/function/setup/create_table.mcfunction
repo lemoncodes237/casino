@@ -70,6 +70,7 @@ execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboar
 execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-dealer-responsibility = $yj-dealer-responsibility yj-casino-temp
 scoreboard players operation $yj-temp yj-casino-temp = @s yj-id
 execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-id = $yj-temp yj-casino-temp
+execute as @e[type=interaction,distance=..20,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-game-id = $yj-temp yj-game-id
 
 # Fifty Fifty - Need commission data
 execute if score $yj-dealer-game yj-casino-temp matches 1 as @e[type=interaction,distance=..10,tag=yj-bet-spot-temp] run scoreboard players operation @s yj-fifty-fifty-commission = $yj-commission yj-casino-temp

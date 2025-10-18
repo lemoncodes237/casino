@@ -1,7 +1,11 @@
 # Don't want two dealers too close to yourself
-execute at @s if entity @e[type=villager,tag=yj-dealer,distance=..2.5] run return run tellraw @s "You can't create a dealer this close to another one!"
+execute at @s if entity @e[type=villager,tag=yj-dealer,distance=..4.5] run return run tellraw @s "You can't create a dealer this close to another one!"
 
 execute at @s align xz positioned ~0.5 ~ ~0.5 run summon villager ~ ~ ~ {Tags:["yj-dealer","yj-temp"],CustomName:"Dealer",NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b}
 tellraw @s "Dealer Summoned!"
 scoreboard players operation @e[type=villager,tag=yj-temp,distance=..5,limit=1,sort=nearest] yj-id = @s yj-id
+
+scoreboard players add $yj-total yj-game-id 1
+scoreboard players operation @e[type=villager,tag=yj-temp,distance=..5,limit=1,sort=nearest] yj-game-id = $yj-total yj-game-id
+
 tag @e[type=villager,tag=yj-temp,distance=..5,limit=1,sort=nearest] remove yj-temp

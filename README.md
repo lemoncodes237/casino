@@ -1,59 +1,31 @@
-# yj-casino
+# YJ's Casino and Economy
 
-TO-DO before BETA release:
-- Three Card Poker
-- Payment System
-- PREVENT PLAYERS FROM BETTING ON DIFFERENT TABLES BY UTILIZING TABLE ID
-- Triple Card Poker still can deal duplicate cards
+## How to use this datapack
 
+The main currency of this datapack is diamonds; each diamond is equal to $10 in-game.
 
-TODOS:
-- Check if double/split is even possible with the player's money
+To deposit or withdraw your diamonds, you can use `/trigger bank`.
 
-tag: yj-blackjack-ace-split1
+Each player has a unique ID, which can be seen using the Tab menu and looking at the number next to each player. If you want to get your own ID, you can also use `/trigger get_id`.
 
-Make original bet a score so we can easily double/split in blackjack
+Dealers can only be created by Opped players by using `/function yjcasino:create_dealer`. Right-clicking on your dealer will allow you to modify your dealer and set up the game they will deal. You will also be able to set your responsibility, which is the percentage of profit/loss from that table you will be responsible for. As an example, if your responsibility is 1% and a player wins a $100 bet, you will be responsible for paying for $1. If they lose the bet, you will get $1.
 
+Any player, opped or not opped, can bet on a table by right-clicking on one of the iron pressure plates on the table. When players have submitted their bets, the game will begin to be dealt.
 
-Blackjack Pipeline:
-Stage 1: Deal first card, deal face down to dealer
-Stage 2: Deal second card
-Stage 3 (Dealer): If Ace, send insurance. Otherwise, send all players to Stage 6 and move Dealer to Stage 4
-Stage 3 (Player): Wait for insurance decision. Insurance should show up in front of the player's bet. (Insurance always allowed if player has blackjack)
-Stage 4 (Player): Waiting Stage for insurance
-Stage 5 (Player): Insurance decision completed. Does not move until all players are at stage 5
-Stage 4 (Dealer): Check Blackjack. If blackjack, send all players to Stage 99 and move Dealer to stage 100. Otherwise, continue. Otherwise, take insurance bets.
-Stage 6 (First Player): If blackjack, get paid and move to Stage 100. Otherwise, decide (unless hard 21). Doubling sends to stage 74. Surrendering sends player from Stage 8 to Stage 100 and removes half of the bet.
-Stage 7-61 (First Player): 0 mod 3: Wait. 1 mod 3: Look at decision and deal card. 2 mod 3: Decide and move to next stage to wait. Hard 21 and standing sends to Stage 60, Busting sends to Stage 70.
-Repeat Stages 6-43 for every player.
-Stage 5-24 (Dealer): Draw. Once at stopping point, go to Stage 75.
+Problems can arise when unexpected events occur, such as a player logging out in the middle of the game on a multiplayer server. In these scenarios, you can use `/function yjcasino:debug` to cancel all active games and return bets to players. Only use this in extreme circumstances where an unsolvable bug occurred. To prevent abuse by players, this command can only be run once per hour.
 
+This datapack is in BETA. Bugs are expected and players are responsible for their own worlds and servers when they decide to use this datapack. Please report any bugs to the Discord server or to the Issues page on Github.
 
-BUST CASE
-Stage 70: Lose your bet. Move to Stage 100.
+## Disclaimer
 
-DOUBLE CASE
-Stage 74: Dealt a card. If busted, go to stage 70
-STAND CASE
-Stage 75 (Dealer): Done with hand.
-Stage 75: Done with hand. Get paid/lose bet. Go to Stage 100.
+This datapack in no way endorses gambling behavior that involves real money. As players play these games, they may realize that tend to lose money rather than win money. This is expected and the games are mathematically designed to behave that way. Do not actually gamble at casinos; doing so will always result in massive losses in the long run.
 
-Stage 81: Done with hand. Split.
+The purpose of this datapack is to provide a Minecraft environment where players can have fun with each other without putting any real-life money at risk as well to give players a way to create functioning casinos for city builds. Once again, this datapack in no way endorses or condones gambling that involves materials or currencies in real life.
 
+## Installing
 
-SPLIT CASES
-Stage 80 (Player): The player split. Now deal with yj-stage-first through yj-stage-fourth to figure out what to do.
-Stage 90 (Player): Get dealt a card, then go to stage 6.
+Install the datapack and the required resource pack. Put the resource pack in the `resourcepack` folder in your `.minecraft` folder and put the datapack in the `datapack` folder of your world or server. After installing, run the command `/reload` in your world to load the datapack.
 
-SPLIT STAGES (actual stage numbers)
-Stage 1: Get a card dealt.
-Stage 2-60: 2 mod 3: Show decision screen. 0 mod 3: Wait. 1 mod 3: Deal with decision.
-Stage 70: Busted. Take bet and set stage to 100.
-Stage 98: Dealt a card. If busted, go to stage 70. This is doubling case.
-Stage 99: Wait for payout/loss
-Stage 100: Done
+## Credits
 
-DEALER BLACKJACK
-Stage 99 (Player): Lose initial bet (or push) and pay out insurance bets
-
-Stage 100: Completed Stage
+Datapack and Resourcepack created by YJMinecraft

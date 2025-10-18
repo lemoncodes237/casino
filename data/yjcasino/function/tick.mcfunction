@@ -49,3 +49,5 @@ execute as @a if score @s get_id matches 1.. run function yjcasino:get_id
 # Refresh name sometimes
 scoreboard players add $yj-name-refresh yj-casino-var 1
 execute if score $yj-name-refresh yj-casino-var matches 72000.. run return run function yjcasino:refresh
+
+scoreboard players add $yj-debug-time yj-casino-var 1

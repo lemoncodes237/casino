@@ -6,6 +6,8 @@ execute as @e[type=interaction,tag=yj-bet-spot-in-play,tag=yj-bet-spot,tag=!yj-b
 
 execute as @e[type=interaction,tag=yj-bet-spot,tag=yj-bet-spot-used,tag=!yj-bet-spot-bet,distance=..10] if score @s yj-player-id = $yj-temp yj-id run scoreboard players operation @s yj-bet = $yj-temp yj-bet
 execute as @e[type=interaction,tag=yj-bet-spot,tag=yj-bet-spot-used,tag=!yj-bet-spot-bet,distance=..10] if score @s yj-player-id = $yj-temp yj-id run scoreboard players operation @s yj-original-bet = $yj-temp yj-bet
+execute as @e[type=interaction,tag=yj-bet-spot,tag=yj-bet-spot-used,tag=!yj-bet-spot-bet,distance=..10] if score @s yj-player-id = $yj-temp yj-id run scoreboard players operation $yj-temp yj-game-id = @s yj-game-id
+scoreboard players operation @s yj-game-id = $yj-temp yj-game-id
 
 execute as @e[type=interaction,tag=yj-bet-spot,tag=yj-bet-spot-used,tag=!yj-bet-spot-bet,distance=..10] if score @s yj-player-id = $yj-temp yj-id at @s positioned ^ ^ ^4 as @e[type=villager,tag=yj-dealer,distance=..1,sort=nearest,limit=1] run function yjcasino:bet/show_dealer
 

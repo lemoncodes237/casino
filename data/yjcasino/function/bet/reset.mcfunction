@@ -36,5 +36,16 @@ execute positioned ^-3 ^1 ^0.5 run kill @e[type=item_display,distance=..3]
 execute positioned ^3 ^1 ^0.5 run kill @e[type=item_display,distance=..3]
 execute positioned ^ ^1 ^1.5 run kill @e[type=item_display,distance=..2]
 
+execute positioned ^ ^1 ^4 as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run scoreboard players operation $yj-temp yj-player-id = @s yj-player-id
+execute as @a if score @s yj-id = $yj-temp yj-player-id run scoreboard players set @s yj-game-id 0
+execute positioned ^3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run scoreboard players operation $yj-temp yj-player-id = @s yj-player-id
+execute as @a if score @s yj-id = $yj-temp yj-player-id run scoreboard players set @s yj-game-id 0
+execute positioned ^-3 ^1 ^3 as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run scoreboard players operation $yj-temp yj-player-id = @s yj-player-id
+execute as @a if score @s yj-id = $yj-temp yj-player-id run scoreboard players set @s yj-game-id 0
+execute positioned ^-4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run scoreboard players operation $yj-temp yj-player-id = @s yj-player-id
+execute as @a if score @s yj-id = $yj-temp yj-player-id run scoreboard players set @s yj-game-id 0
+execute positioned ^4 ^1 ^1 as @e[type=interaction,tag=yj-bet-spot,distance=..1,limit=1,sort=nearest] run scoreboard players operation $yj-temp yj-player-id = @s yj-player-id
+execute as @a if score @s yj-id = $yj-temp yj-player-id run scoreboard players set @s yj-game-id 0
+
 tag @s remove yj-dealer-playing
 tag @s remove yj-dealer-ready

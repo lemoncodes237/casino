@@ -1,6 +1,7 @@
 tellraw @a "YJ Casino ALPHA"
 scoreboard objectives add yj-id dummy
 scoreboard objectives add yj-player-id dummy
+scoreboard objectives add yj-game-id dummy
 scoreboard objectives setdisplay list yj-id
 # Basic balance list
 execute unless score $yj-total yj-id matches 1.. run data modify storage yjcasino:balance balance insert 0 value 0
