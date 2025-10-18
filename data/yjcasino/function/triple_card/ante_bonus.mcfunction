@@ -7,7 +7,6 @@ execute if score $yj-player-strength yj-casino-temp matches 3 run scoreboard pla
 execute if score $yj-player-strength yj-casino-temp matches 4 run scoreboard players set $yj-bonus yj-casino-temp 4
 execute if score $yj-player-strength yj-casino-temp matches 5 run scoreboard players set $yj-bonus yj-casino-temp 5
 
-scoreboard players set $yj-bonus yj-casino-temp 1
 execute if score $yj-bonus yj-casino-temp matches 0 run return 0
 
 # The owner loses some money depending on responsbility
