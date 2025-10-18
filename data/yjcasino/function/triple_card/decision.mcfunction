@@ -6,6 +6,9 @@ function yjcasino:money/get_balance with storage yjcasino:balance
 # Check money
 execute if score @s yj-money < @s yj-original-bet run return run function yjcasino:triple_card/no_money
 
+# If ante bonus, pay it out
+execute if entity @s[tag=yj-ante-bonus] run function yjcasino:triple_card/ante_bonus
+
 # Now we can play
 execute store result storage yjcasino:temp card int 1 run scoreboard players get @s yj-card1
 data modify storage yjcasino:temp index set value 1
