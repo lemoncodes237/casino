@@ -3,6 +3,7 @@ scoreboard players operation $yj-dealer-minbet yj-casino-temp = @s yj-dealer-min
 scoreboard players operation $yj-dealer-maxbet yj-casino-temp = @s yj-dealer-maxbet
 scoreboard players operation $yj-dealer-game yj-casino-temp = @s yj-dealer-game
 scoreboard players operation $yj-dealer-responsibility yj-casino-temp = @s yj-dealer-responsibility
+scoreboard players operation $yj-dealer-speed yj-casino-temp = @s yj-dealer-wait-time
 
 execute if score $yj-dealer-minbet yj-casino-temp > $yj-dealer-maxbet yj-casino-temp run return run tellraw @s "The minimum bet must be lower than the maximum bet!"
 
@@ -21,6 +22,12 @@ scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,s
 scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-minbet = $yj-dealer-minbet yj-casino-temp
 scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-maxbet = $yj-dealer-maxbet yj-casino-temp
 scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-responsibility = $yj-dealer-responsibility yj-casino-temp
+scoreboard players operation @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-act-time = $yj-dealer-speed yj-casino-temp
+execute if score $yj-dealer-speed yj-casino-temp matches 5 run scoreboard players set @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-wait-time 20
+execute if score $yj-dealer-speed yj-casino-temp matches 10 run scoreboard players set @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-wait-time 60
+execute if score $yj-dealer-speed yj-casino-temp matches 14 run scoreboard players set @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-wait-time 80
+execute if score $yj-dealer-speed yj-casino-temp matches 16 run scoreboard players set @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-wait-time 90
+execute if score $yj-dealer-speed yj-casino-temp matches 20 run scoreboard players set @e[type=villager,tag=yj-dealer-temp,distance=..10,sort=nearest,limit=1] yj-dealer-wait-time 100
 
 # For specific games
 # Fifty Fifty - Need commission data

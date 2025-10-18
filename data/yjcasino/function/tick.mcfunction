@@ -1,6 +1,6 @@
 scoreboard players add @a yj-id 0
 
-execute as @a[scores={yj-id=0}] run function yjcasino:init_id
+execute as @a[scores={yj-id=0}] at @s run function yjcasino:init_id
 execute as @a unless score @s yj-money matches -2147483648..2147483647 run scoreboard players set @s yj-money 0
 
 execute as @a if score @s deposit-money-yj matches 1.. run function yjcasino:money/deposit_money
@@ -35,3 +35,17 @@ execute as @a if score @s yj-blackjack-insurance-decision matches 1.. at @s run 
 execute as @a if score @s yj-blackjack-decision matches 1.. at @s run function yjcasino:blackjack/check_decision
 
 execute as @a if score @s yj-triple-card-decision matches 1.. at @s run function yjcasino:triple_card/check_decision
+
+# Payment system
+scoreboard players enable @a pay
+execute as @a if score @s pay matches 1.. run function yjcasino:money/players/pay
+
+execute as @a if score @s yj-payment matches 1.. run function yjcasino:money/players/finalize_pay
+
+# Get id
+scoreboard players enable @a get_id
+execute as @a if score @s get_id matches 1.. run function yjcasino:get_id
+
+# Refresh name sometimes
+scoreboard players add $yj-name-refresh yj-casino-var 1
+execute if score $yj-name-refresh yj-casino-var matches 72000.. run return run function yjcasino:refresh

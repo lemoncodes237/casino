@@ -6,7 +6,7 @@ scoreboard players operation $yj-temp yj-id = @s yj-player-id
 
 # Get balance
 execute store result storage yjcasino:balance id int 1 run scoreboard players get @s yj-player-id
-function yjcasino:money/get_balance_100 with storage yjcasino:balance
+function yjcasino:money/get_balance with storage yjcasino:balance
 
 # Do you have a BLACKJACK???
 execute if score @s yj-total matches 11 if entity @s[tag=yj-blackjack-ace] if score @s yj-cards matches 2 at @s run return run function yjcasino:blackjack/player_blackjack

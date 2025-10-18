@@ -190,6 +190,38 @@
       ]
     },
     {
+      "type": "minecraft:single_option",
+      "key": "speed",
+      "label": "Dealing Speed",
+      "options": [
+        {
+          "id": "20",
+          "display": "Turtle",
+          "initial": false
+        },
+        {
+          "id": "16",
+          "display": "Slow",
+          "initial": false
+        },
+        {
+          "id": "14",
+          "display": "Medium",
+          "initial": true
+        },
+        {
+          "id": "10",
+          "display": "Fast",
+          "initial": false
+        },
+        {
+          "id": "5",
+          "display": "Lightning",
+          "initial": false
+        }
+      ]
+    },
+    {
       "type": "minecraft:number_range",
       "key": "responsibility",
       "label": "Your Responsibility %",
@@ -207,7 +239,7 @@
       "label": "Done",
       "action": {
         "type": "minecraft:dynamic/run_command",
-        "template": "function yjcasino:setup/dealer_setup {facing:$(facing),game:$(game),min_bet:$(min_bet),max_bet:$(max_bet),responsibility:$(responsibility)}"
+        "template": "function yjcasino:setup/dealer_setup {facing:$(facing),game:$(game),min_bet:$(min_bet),max_bet:$(max_bet),speed:$(speed),responsibility:$(responsibility)}"
       }
     },
     {

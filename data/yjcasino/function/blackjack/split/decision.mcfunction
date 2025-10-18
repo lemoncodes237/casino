@@ -6,7 +6,7 @@ scoreboard players operation $yj-temp yj-id = @s yj-player-id
 
 # Get balance
 execute store result storage yjcasino:balance id int 1 run scoreboard players get @s yj-player-id
-function yjcasino:money/get_balance_100 with storage yjcasino:balance
+function yjcasino:money/get_balance with storage yjcasino:balance
 
 # Force quit at 21
 $execute if score @s yj-blackjack-split$(split)-total matches 21 as @a if score @s yj-id = $yj-temp yj-id at @s run playsound entity.experience_orb.pickup master @s ~ ~ ~

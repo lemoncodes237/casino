@@ -1,0 +1,1 @@
+$data modify storage yjcasino:balance names[$(id)] set value $(name)

@@ -1,0 +1,2 @@
+scoreboard players enable @s yj-payment
+$dialog show @s {type:"minecraft:confirmation",title:["Pay $(name)"],body:[{type:"minecraft:plain_message",contents:"How much would you like to pay $(name)?"},{type:"minecraft:plain_message",contents:"Your balance: $$(money)"}],inputs:[{type:"minecraft:text",key:"payment",label:"Payment (in dollars)",initial:""}],yes:{label:"Confirm",action:{type:"minecraft:dynamic/run_command",template:"trigger yj-payment set $(payment)"}},no:{label:"Cancel"}}

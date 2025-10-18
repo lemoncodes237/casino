@@ -1,4 +1,4 @@
-function yjcasino:triple_card/get_card
+execute at @s run function yjcasino:triple_card/get_card
 
 # Now it's in $yj-card yj-casino-temp
 

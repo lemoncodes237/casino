@@ -1,9 +1,16 @@
 tellraw @a "YJ Casino ALPHA"
 scoreboard objectives add yj-id dummy
 scoreboard objectives add yj-player-id dummy
+scoreboard objectives setdisplay list yj-id
 # Basic balance list
 execute unless score $yj-total yj-id matches 1.. run data modify storage yjcasino:balance balance insert 0 value 0
+execute unless score $yj-total yj-id matches 1.. run data modify storage yjcasino:balance names insert 0 value 0
 execute unless score $yj-total yj-id matches 1.. run scoreboard players set $yj-total yj-id 1
+
+scoreboard objectives add pay trigger
+scoreboard objectives add get_id trigger
+scoreboard objectives add yj-payment trigger
+scoreboard objectives add yj-payment-id dummy
 
 # For creating dealers
 data modify storage yjcasino:dealer details set value [0]
@@ -27,6 +34,8 @@ scoreboard objectives add yj-total dummy
 scoreboard objectives add yj-last-card dummy
 scoreboard objectives add yj-last-suit dummy
 scoreboard objectives add yj-dealer-time-to-finish dummy
+scoreboard objectives add yj-dealer-wait-time dummy
+scoreboard objectives add yj-dealer-act-time dummy
 
 scoreboard objectives add yj-cards-banker dummy
 scoreboard objectives add yj-total-banker dummy
