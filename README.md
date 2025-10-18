@@ -12,6 +12,8 @@ Dealers can only be created by Opped players by using `/function yjcasino:create
 
 Any player, opped or not opped, can bet on a table by right-clicking on one of the iron pressure plates on the table. When players have submitted their bets, the game will begin to be dealt.
 
+To pay players using the datapack currency, they can use `/trigger pay set [id]`, where `[id]` is the ID of the player they wish to pay. To make sure you are paying the right player, running this command will tell you the username of the player you are about to pay. You will then be allowed to input the amount of money you would like to pay that person. Cents are not supported in this payment, so only pay using whole dollars.
+
 Problems can arise when unexpected events occur, such as a player logging out in the middle of the game on a multiplayer server. In these scenarios, you can use `/function yjcasino:debug` to cancel all active games and return bets to players. Only use this in extreme circumstances where an unsolvable bug occurred. To prevent abuse by players, this command can only be run once per hour.
 
 This datapack is in BETA. Bugs are expected and players are responsible for their own worlds and servers when they decide to use this datapack. Please report any bugs to the Discord server or to the Issues page on Github.
