@@ -1,0 +1,1 @@
+$execute positioned ^$(offset) ^$(yoffset) ^-$(offset) run function yjcasino:robbery/deal_card

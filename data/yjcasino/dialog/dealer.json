@@ -62,6 +62,11 @@
           "id": "5",
           "display": "Triple Card Poker",
           "initial": false
+        },
+        {
+          "id": "6",
+          "display": "Robbery",
+          "initial": false
         }
       ]
     },

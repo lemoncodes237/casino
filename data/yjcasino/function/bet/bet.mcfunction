@@ -29,3 +29,4 @@ execute if entity @e[type=interaction,scores={yj-dealer-game=2},tag=yj-bet-spot,
 execute if entity @e[type=interaction,scores={yj-dealer-game=3},tag=yj-bet-spot,distance=..1] run function yjcasino:blackjack/begin_bet
 execute if entity @e[type=interaction,scores={yj-dealer-game=4},tag=yj-bet-spot,distance=..1] run function yjcasino:baccarat/begin_bet
 execute if entity @e[type=interaction,scores={yj-dealer-game=5},tag=yj-bet-spot,distance=..1] run function yjcasino:triple_card/begin_bet
+execute if entity @e[type=interaction,scores={yj-dealer-game=6},tag=yj-bet-spot,distance=..1] run function yjcasino:robbery/begin_bet with storage yjcasino:bet

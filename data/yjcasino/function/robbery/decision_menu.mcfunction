@@ -1,0 +1,2 @@
+scoreboard players enable @s yj-robbery-decision
+$dialog show @s {type:"minecraft:multi_action",title:"Robbery",body:{type:"minecraft:plain_message",contents:"$(player) vs $(dealer)"},can_close_with_escape:0,actions:[{label:"Steal",action:{type:"minecraft:run_command",command:"trigger yj-robbery-decision set 1"}},{label:"Leave",action:{type:"minecraft:run_command",command:"trigger yj-robbery-decision set 2"}}]}

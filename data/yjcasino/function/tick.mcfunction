@@ -34,7 +34,11 @@ execute as @a if score @s yj-war-decision matches 1.. at @s run function yjcasin
 execute as @a if score @s yj-blackjack-insurance-decision matches 1.. at @s run function yjcasino:blackjack/insurance_decision
 execute as @a if score @s yj-blackjack-decision matches 1.. at @s run function yjcasino:blackjack/check_decision
 
+# Needed for Triple Card Poker
 execute as @a if score @s yj-triple-card-decision matches 1.. at @s run function yjcasino:triple_card/check_decision
+
+# Needed for Robbery
+execute as @a if score @s yj-robbery-decision matches 1.. at @s run function yjcasino:robbery/check_decision
 
 # Payment system
 scoreboard players enable @a pay

@@ -78,6 +78,8 @@ scoreboard objectives add yj-blackjack-split3-cards dummy
 scoreboard objectives add yj-blackjack-split4-cards dummy
 # Triple Card
 scoreboard objectives add yj-triple-card-decision trigger
+# Triple Card
+scoreboard objectives add yj-robbery-decision trigger
 
 # For decks
 scoreboard objectives add yj-card1 dummy
