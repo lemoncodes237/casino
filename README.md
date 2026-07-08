@@ -1,7 +1,5 @@
 # YJ's Casino and Economy
 
-Hung bad
-
 ## How to use this datapack
 
 The main currency of this datapack is diamonds; each diamond is equal to $10 in-game.
